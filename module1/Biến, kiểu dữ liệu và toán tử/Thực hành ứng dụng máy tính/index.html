@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">
+                <input  id="bd" type="text" name="so1">
+                <input id="cd" type="text" name="so2">
+            </td>
+        </tr>
+        <tr>
+            <td>
+               <button onclick="addtion()" name="addtion">addtion(+)</button>
+                <button onclick="Subtraction()" name="Subtraction">Subtraction(-)</button>
+                <button onclick="Multiplication()" name="Multiplication">Multiplication(*)</button>
+                <button onclick="Division()" name="Division">Division(/)</button>
+            </td>
+
+        </tr>
+    </table>
+    <h3 id ="ad"> Result Division :</h3>
+  <script>
+      function addtion() {
+          let a = parseInt(document.getElementById("bd").value);
+          let b = parseInt(document.getElementById("cd").value);
+          let c
+           c=a+b;
+        document.getElementById("ad").innerHTML=c;
+      }
+      function Subtraction() {
+          let a = parseInt(document.getElementById("bd").value);
+          let b = parseInt(document.getElementById("cd").value);
+          let c
+          c=a-b;
+          document.getElementById("ad").innerHTML=c;
+      }
+      function Multiplication() {
+          let a = parseInt(document.getElementById("bd").value);
+          let b = parseInt(document.getElementById("cd").value);
+          let c
+          c=a*b;
+          document.getElementById("ad").innerHTML=c;
+      }
+      function Division() {
+          let a = parseInt(document.getElementById("bd").value);
+          let b = parseInt(document.getElementById("cd").value);
+          let c
+          c=a/b;
+          document.getElementById("ad").innerHTML=c;
+      }
+  </script>
+
+</body>
+</html>
