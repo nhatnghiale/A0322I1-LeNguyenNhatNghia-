@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <script>
+     let a = parseFloat(prompt(' mời bạn nhập điểm bài kiểm tra '))
+     let b = parseFloat(prompt(' mời bạn nhập điểm bài thi giữa kì'))
+     let c = parseFloat(prompt(' mời bạn nhập điểm thi cuối kì '))
+     let avg
+     avg = (a+b+c)/3
+     if (avg <4){
+         alert(' học lực trung bình ')
+
+     }else if (4<avg<7){
+         alert(' học lực khá ')
+
+     }else if ( avg >7 ){
+          alert(' hocj lực giỏi')
+     }else {
+         alert(' không hợp lệ')
+     }
+ </script>
+</body>
+</html>
