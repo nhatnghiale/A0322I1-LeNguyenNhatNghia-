@@ -5,6 +5,23 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    let SoDien = parseInt(prompt('nhập số điện đã sử dụng '));
+    let TienDIen
+    if (SoDien > 0){
+        if (SoDien <= 50)
+            TienDIen = SoDien * 1000
+    }else if (SoDien <= 100){
+        TienDIen = 50 * 1000 + (SoDien - 50) * 1200
+    }else  if (SoDien <= 200){
+        TienDIen = 50 * 1000 + 50 * 1000 + (SoDien - 100) * 1500
+    }else if (SoDien <= 300){
+        TienDIen = 50 * 1000 + 50 * 1200 + 1000 * 1500 + (SoDien - 200) * 2000
+    }else if (SoDien <= 400){
+        TienDIen = 50 * 1000 + 50 * 1200 + 100 * 1500 + 100* 2000 (SoDien - 300) * 2500
+    }
+    alert('Tien dien phai tra'+ TienDIen +'VND')
 
+</script>
 </body>
 </html>
