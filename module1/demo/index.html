@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .heart {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            display: block;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            animation: heart 1s ease infinite
+        }
+
+        @keyframes heart {
+            96% {
+                transform: translate(-50%,-50%) scale(.8,.8)
+            }
+
+            100% {
+                transform: translate(-50%,-50%) scale(1,1)
+            }
+        }
+
+        .heart div {
+            background: red;
+            width: 71px;
+            height: 126px;
+            top: 40px;
+            display: block;
+            position: absolute;
+            border-radius: 50%
+        }
+
+        .left {
+            left: 45px;
+            transform: rotate(330deg);
+        }
+
+        .right {
+            right: 45px;
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+
+<body>
+<div class="heart">
+    <div class="left"></div>
+    <div class="right"></div>
+    <p id="ad"> hello bạn mình có điều muốn nối</p>
+    <button type="button" onclick='document.getElementById("ad").innerHTML = "I LOVE YOUUUU! <3 <3"'>Click Me!</button>
+</div>
+
+</body>
+</html>
