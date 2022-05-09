@@ -6,9 +6,20 @@
 </head>
 <body>
 <script>
-    function () {
+    function bai3Function(a,b) {
+        if(a>b){
+            return 'số đầu lớn hơn số thứ hai';
+        }else{
+            return a+b;
+        }
+    }
 
-  }
+
+    function submitFunction() {
+        let inputOne = parseInt(document.getElementById('number1').value);
+        let inputTwo = parseInt(document.getElementById('number2').value);
+        alert(bai3Function(inputOne, inputTwo));
+    }
 
 </script>
 </body>

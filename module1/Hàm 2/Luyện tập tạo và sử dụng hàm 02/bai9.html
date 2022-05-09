@@ -6,10 +6,9 @@
 </head>
 <body>
 <script>
-    let array = ['a','b','c','d','e','f','g','h','a','b'];
-    let kiTu  = 'b';
-
-    function countKiTu(arr, w){
+    let arr = ['a','b','c','d','e','f','g','h','a','b'];
+    let kiTu  = 'd';
+    function demkitu(arr, w){
         let count = 0;
         for(let index in arr){
             if(arr[index] == w){
@@ -22,8 +21,7 @@
             return count;
         }
     }
-
-    alert(countKiTu(array,kiTu));
+    alert(demkitu(arr,kiTu));
 </script>
 </body>
 </html>
