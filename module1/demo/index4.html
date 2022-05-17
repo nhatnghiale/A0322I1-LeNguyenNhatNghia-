@@ -6,72 +6,60 @@
 </head>
 <body>
 <script>
-    var Moblie = function (battery, memoryArea1, memoryArea2, memoryArea3) {
-        this.battery = battery;
-        this.memoryArea1 = memoryArea1;
-        this.memoryArea2 = memoryArea2;
-        this.memoryArea3 = memoryArea3;
-
-        this.checkStatusOnOff = function () {
-
-            if (this.battery > 0) {
-                return true;
+    let Lamp = function (name) {
+        this.name = name;
+        this.status = false;
+        this.turnOn = function () {
+            if (this.status) {
+                console.log("đang sáng rồi mà")
             } else {
-                return false;
+                console.log("đèn đã được bật!");
+                this.status =true;
             }
         };
+        this.turnOff = function () {
+            if (this.status) {
+                console.log("đèn đã được tắt!");
+                this.status =false
+            } else {
+                console.log("đang sáng rồi mà")
 
-        this.turnOn = function () {
-            alert("Dienthoaidangbat");
+            }
         };
-
-        this.turnOf = function () {
-            alert("Dienthoaidangbat");
-        };
-
-        this.charge = function () {
-            alert("Xoac Pin" + this.battery++);
-        };
-
-        this.writeMessenger = function () {
-            prompt("This is a messenger");
-        };
-
-        this.massengerL = function () {
-            alert("massenger da gui");
-
-        };
-        this.afterUse = function () {
-            alert("Dung mot chuc nang :" + this.battery--);
-        }
-
     };
-    var mobile = new Moblie(10, 100, 100, 100);
+    let switcher = function () {
+        this.lamp = {};
+        this.conectStatus = false;
+        this.conectToLamp = function (obj) {
+            this.lamp = obj;
+            this.status = true;
+        };
+        this.getStatus = function () {
+            if (this.status) {
+                console.log(this.lamp.name);
+                console.log(this.lamp.status);
+            }
+        };
+        this.turnOff = function () {
+            if (this.status) {
+                this.lamp.turnOff();
+                this.getStatus();
+            }
+        };
+        this.turnOn = function () {
+            if (this.status) {
+                this.lamp.turnOn();
+                this.getStatus();
+            }
+        }
+    };
 
-    function main() {
-        mobile.turnOf();
-    }
 
-    function main1() {
-        mobile.turnOn();
-    }
-
-    function main2() {
-        mobile.charge();
-    }
-
-    function main3() {
-        mobile.writeMessenger();
-    }
-
-    function main4() {
-        mobile.massengerL();
-    }
-
-    function main5() {
-        mobile.afterUse();
-
-    }
-
+    let sonySwitcher = new switcher();
+    let sonyLamp = new Lamp("h1102");
+    sonySwitcher.conectToLamp(sonyLamp);
+    sonySwitcher.turnOn();
+    sonySwitcher.turnOff();
+</script>
 </body>
 </html>
