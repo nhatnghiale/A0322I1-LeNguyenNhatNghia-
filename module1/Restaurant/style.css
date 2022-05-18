@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 :root{
     --main-color : #191F3A;
     --sub-color  : #EAA023;
+    --text-color :  #ffffff;
 }
 * {
     margin: 0;
@@ -26,7 +28,7 @@ a {
     flex-wrap: wrap;
 }
 .top{
-    background-color: var(--main-color) ;
+    background-color: var(--main-color);
 }
 .top .logo img{
     width: 80px;
@@ -35,6 +37,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 .top .menu-bar span{
     display: block;
@@ -42,7 +46,58 @@ a {
     width: 40px;
     background-color: var(--sub-color);
     position: relative;
+    z-index: 1;
+}
+.top .menu-bar.active span{
+    background-color: transparent;
+
+}
+.top .menu-bar.active span::before{
+    transform: rotate(-135deg);
+
+}
+.top .menu-bar.active span::after{
+    transform: rotate(135deg);
+
 }
 .top .menu-bar span ::before {
+    height:100%;
+    width: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    transform: translateY(-10px);
+    background-color: var(--sub-color);
+
+}
+.top .menu-bar span ::after {
+    height:100%;
+    width: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    transform: translateY(10px);
+    background-color: var(--sub-color);
+
+}
+.menu-items{
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--main-color);
+    right: 0;
+    top: 0;
+    padding: 100px 50px;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+.menu-items.active{
+    transform: translateX(0);
+}
+.menu-items a{
+    color:var(--text-color);
+    line-height: 40px;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
 
 }
